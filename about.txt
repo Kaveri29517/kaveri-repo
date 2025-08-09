@@ -1,0 +1,3 @@
+Name:kaveri Bandaru
+Course:Bsc computer science (minor:maths)
+one thing I Learned about GitHub: GitHub helps me manage and share my code with others using version contol

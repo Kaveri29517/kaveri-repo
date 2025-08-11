@@ -1,0 +1,14 @@
+This is a basic idea for a student portal application
+
+-student registration and login
+-view academic timetable
+-submit assignments online
+-view attendance records
+-receive notifications from faculty
+
+Technologies:
+-frontend: HTML,CSS,JavaScript
+-Backend: Node.js with Express
+-Database: MangoDB
+
+This project is part of a learning exercise to understand GitHub repository setup and documentation

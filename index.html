@@ -1,130 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Custom Cake Order with Image</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Life Cycle</title>
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background: #fffaf0;
-      padding: 20px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: linear-gradient(to right, #fceabb, #f8b500);
     }
     h1 {
-      text-align: center;
-      color: #b14f00;
+        margin-top: 20px;
+        color: #333;
     }
-    .form-container {
-      max-width: 400px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    .cycle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
     }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      font-size: 16px;
+    .step {
+        background: white;
+        border-radius: 50%;
+        padding: 20px;
+        width: 120px;
+        height: 120px;
+        margin: 15px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #333;
+        transition: transform 0.3s ease;
     }
-    button {
-      background: #e67e22;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .step:hover {
+        transform: scale(1.1);
+        background: #ffd54f;
     }
-    button:hover {
-      background: #cf711f;
-    }
-    .cake-list {
-      margin-top: 30px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cake-item {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-    .cake-item img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .cake-info {
-      flex-grow: 1;
-    }
-  </style>
+</style>
 </head>
 <body>
 
-<h1>🎂 Custom Cake Order</h1>
-  <h2>To the customers</h2>
-
-<div class="form-container">
-  <label for="cakeName">Cake Name:</label>
-  <input type="text" id="cakeName" placeholder="Enter cake name" required>
-
-  <label for="cakePrice">Cake Price (₹):</label>
-  <input type="number" id="cakePrice" placeholder="Enter price" required>
-
-  <label for="cakeImage">Upload Cake Image:</label>
-  <input type="file" id="cakeImage" accept="image/*">
-
-  <button onclick="addCake()">Add to List</button>
+<h1>DevOps Life Cycle</h1>
+<div class="cycle">
+    <div class="step">Plan</div>
+    <div class="step">Code</div>
+    <div class="step">Build</div>
+    <div class="step">Test</div>
+    <div class="step">Release</div>
+    <div class="step">Deploy</div>
+    <div class="step">Operate</div>
+    <div class="step">Monitor</div>
+    <div class="step">Feedback</div>
 </div>
-
-<div class="cake-list" id="cakeList">
-  <h2 style="text-align:center;">Your Cake Orders</h2>
-  <!-- Cake items appear here -->
-</div>
-
-<script>
-  function addCake() {
-    const name = document.getElementById("cakeName").value.trim();
-    const price = document.getElementById("cakePrice").value.trim();
-    const imageInput = document.getElementById("cakeImage");
-
-    if (name === "" || price === "" || !imageInput.files[0]) {
-      alert("Please enter name, price and upload an image.");
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      const imageUrl = event.target.result;
-
-      const cakeList = document.getElementById("cakeList");
-
-      const cakeItem = document.createElement("div");
-      cakeItem.className = "cake-item";
-      cakeItem.innerHTML = `
-        <img src="${imageUrl}" alt="Cake Image">
-        <div class="cake-info">
-          <strong>${name}</strong><br>
-          Price: ₹${price}
-        </div>
-      `;
-
-      cakeList.appendChild(cakeItem);
-
-      // Clear inputs
-      document.getElementById("cakeName").value = "";
-      document.getElementById("cakePrice").value = "";
-      document.getElementById("cakeImage").value = "";
-    };
-
-    reader.readAsDataURL(imageInput.files[0]);
-  }
-</script>
 
 </body>
-
 </html>
